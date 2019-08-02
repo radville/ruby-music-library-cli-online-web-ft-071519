@@ -9,6 +9,12 @@ class Artist
     @songs = []
   end
   
+  def genres
+    self.songs.map do |song|
+      song.genre
+    end
+  end
+  
   def add_song(song)
     song.artist = self unless song.artist
     @songs << song unless self.songs.include?(song)
