@@ -3,15 +3,15 @@ Bundler.require
 
 module Concerns
   module Findable
-    def self.find_by_name(song)
-      self.all.detect { |s| s.name == song }
+    def self.find_by_name(instance_name)
+      self.all.detect { |s| s.name == instance_name }
     end
     
-    def self.find_or_create_by_name(item)
-      if self.find_by_name(item)
-        self.find_by_name(item)
+    def self.find_or_create_by_name(instance_name)
+      if self.find_by_name(instance_name)
+        self.find_by_name(instance_name)
       else
-        self.create(item)
+        self.create(instance_name)
       end
     end
     
