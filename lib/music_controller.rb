@@ -67,8 +67,8 @@ class MusicLibraryController
           binding.pry
 
     # sorted = Song.all.sort_by { |s| s.name}
-      song = list_songs[input.to_i+1]
     if input.to_i > 0  
+      song = list_songs[input.to_i+1]
       puts "Playing #{song.name} by #{song.artist.name}"
     end
   end
